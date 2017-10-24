@@ -19,7 +19,8 @@
 		<div id="page-wrapper">
 
 			<!-- Header -->
-				<div id="header-wrapper" class="wrapper">
+			<?php $image=$page->images->first(); ?>
+				<div id="header-wrapper" class="wrapper" style="background-image: url('<?php echo $image->url; ?>')">
 					<div id="header">
 
 						<!-- Logo -->
