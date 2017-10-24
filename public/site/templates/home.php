@@ -87,7 +87,7 @@
 								</header>
 								<div class="feature-list">
 									<div class="row">
-									<?php $servicios=$pages->find("template=servicio, sort=-published"); 
+									<?php $servicios=$pages->find("template=servicio, sort=sort"); 
               								foreach ($servicios as $servicio) { ?> 
 									<div class="6u 12u(mobile)">
 											<section>
