@@ -1,17 +1,28 @@
 <?php
 
-include("./_head.php"); ?>
+/**
+ * Site map template
+ *
+ */
 
-<div id='content'>
+include("./head.inc"); 
 
-	<?php 
-	
-	$maxDepth = 4; 
-	renderNavTree($pages->get('/'), $maxDepth); 
-	// see the _init.php for the renderNavTree function
-	
-	?>
+function sitemapListPage($page) {
 
-</div>
+	echo "<li><a href='{$page->url}'>{$page->title}</a> ";	
 
-<?php include("./_foot.php"); ?>
+	if($page->numChildren) {
+		echo "<ul>";
+		foreach($page->children as $child) sitemapListPage($child); 
+		echo "</ul>";
+	}
+
+	echo "</li>";
+}
+
+echo "<ul class='sitemap'>";
+sitemapListPage($pages->get("/")); 
+echo "</ul>";
+
+include("./foot.inc"); 
+
