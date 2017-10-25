@@ -1,20 +1,4 @@
-<!DOCTYPE HTML>
-<!--
-	Escape Velocity by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>IGP | Inmobiliaria, planeación, consultoría, desarrollo de negocios inmobiliarios y administración de propiedades</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="shortcut icon" href="/site/templates/images/favicon.png" type="image/x-icon">
-        <link rel="icon" href="/site/templates/images/favicon.png" type="image/x-icon">
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="<?php echo $config->urls->templates ?>assets/sass/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	</head>
+<?php include('./_head.php'); ?>
 	<body class="homepage">
 		<div id="page-wrapper">
 
@@ -30,30 +14,7 @@
 							</div>
 
 						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li class="current"><a href="/">Inicio</a></li>
-									
-									<li>
-									    <a href="/#servicios">Servicios</a>
-									    <ul>
-											<li><a href="servicios/administracion-de-propiedades/">Propiedades</a></li>
-											<li><a href="servicios/comercializacion-y-promocion-de-patrimonios/">Patrimonios</a></li>
-											<li><a href="servicios/planeacion-desarrollo-de-negocios-inmobiliarios/">Inmobiliarios</a></li>
-										</ul>
-									</li>
-									<li>
-										<a href="/casas">Nuestras propiedades</a>
-										<ul>
-											<li><a href="/casas/?tipo=venta">Venta</a></li>
-											<li><a href="/casas/?tipo=renta">Renta</a></li>
-											<li><a href="/casas">Mas propiedades</a></li>
-										</ul>
-									</li>
-									<li><a href="/servicios/consultoria-ambiental-sas/">Consultoría ambiental</a></li>
-									<li><a href="/#contacto">Contacto</a></li>
-								</ul>
-							</nav>
+							<?php include('./_nav.php'); ?>
 
 					</div>
 				</div>
@@ -92,7 +53,7 @@
               								foreach ($servicios as $servicio) { ?> 
 									<div class="6u 12u(mobile)">
 											<section>
-												<h3 class="icon fa-refresh"><?=$servicio->title;?></h3>
+												<h3><?=$servicio->title;?></h3>
 												<?php $texto=$servicio->title1.' '.$servicio->text1; ?>
 												<p><?= substr($texto, 0, 158).'...'; ?> <br><a href="<?=$servicio->url;?>">Leer mas</a></p>
 											</section>
