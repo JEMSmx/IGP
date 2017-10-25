@@ -16,7 +16,7 @@
 			</div>
 			<h3><?=$casa->title; ?></h3>
 			<p class="location"><?=$casa->title1; ?></p>
-			<p class="location"><?=$casa->select1->value; ?> - <?=$casa->select2->value; ?></p>
+			<p class="location"><?=$casa->categories->title; ?> - <?=$casa->select2->value; ?></p>
 			<p class="details">$<?=$casa->price; ?> mxn</p>
 			<p class="details">Area: <?=$casa->area; ?> m²</p>
 		</a>

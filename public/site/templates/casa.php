@@ -1,29 +1,5 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>IGP | Inmobiliaria, planeación, consultoría, desarrollo de negocios inmobiliarios y administración de propiedades</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-
-		<link rel="stylesheet" href="<?php echo $config->urls->templates ?>assets/sass/main.css" />
-    <link rel="stylesheet" href="<?php echo $config->urls->templates ?>assets/css/owl.carousel.min.css">
-		<link rel="stylesheet" href="<?php echo $config->urls->templates ?>assets/css/owl.theme.default.min.css">
-		
-		
-		<style>
-      .owl-stage {
-          display: -webkit-box;
-          display: -moz-box;
-          display: -ms-box;
-          display: box;
-        }
-        #owl-exa {
-          height: 400px;
-        }
-    </style>
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	</head>
+<?php include('./_head.php'); ?>
+<script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>
 	<body class="no-sidebar">
 		<div id="page-wrapper">
 			<!-- Header -->
@@ -36,24 +12,7 @@
 							</div>
 
 						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li class="current"><a href="/">Inicio</a></li>
-									
-									<li><a href="/#servicios">Servicios</a></li>
-									<li>
-										<a href="/casas">Nuestras propiedades</a>
-										<ul>
-											<li><a href="/casas/?tipo=venta">Venta</a></li>
-											<li><a href="/casas/?tipo=renta">Renta</a></li>
-											<li><a href="/casas">Mas propiedades</a></li>
-										</ul>
-									</li>
-									<li><a href="/servicios/consultoria-ambiental-sas/">Consultoría ambiental</a></li>
-									<li><a href="/#contacto">Contacto</a></li>
-								</ul>
-							</nav>
-
+							<?php include('./_nav.php'); ?>
 					</div>
 				</div>
 
@@ -67,7 +26,7 @@
 									
                   
                   <header class="style1">
-										<h2 style="margin-top: .75em;"><?=$page->select1->value;?> - <?=$page->select2->value;?>  <br> <?=$page->price;?>  mxn</h2>
+										<h2 style="margin-top: .75em;"><?=$casa->categories->title; ?> - <?=$page->select2->value;?>  <br> <?=$page->price;?>  mxn</h2>
 										<p>
                       <strong><?=$page->title2;?>  - <?=$page->title1;?> </strong>
                       <br>
@@ -89,7 +48,12 @@
 							</div>
 
 					</div>
+					<?php 
+$map = $modules->get('MarkupGoogleMap');
+echo $map->render($page, 'location');
+?>
 				</div>
+
 
 <!--  Footer  -->
 			<div id="footer-wrapper" class="wrapper">

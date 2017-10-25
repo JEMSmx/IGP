@@ -1,13 +1,4 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>IGP | Inmobiliaria, planeación, consultoría, desarrollo de negocios inmobiliarios y administración de propiedades</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="<?php echo $config->urls->templates ?>assets/sass/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	</head>
+<?php include('./_head.php'); ?>
 	<body class="no-sidebar">
 		<div id="page-wrapper">
 
@@ -21,23 +12,7 @@
 							</div>
 
 						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li class="current"><a href="/">Inicio</a></li>
-									
-									<li><a href="/#servicios">Servicios</a></li>
-									<li>
-										<a href="/casas">Nuestras propiedades</a>
-										<ul>
-											<li><a href="/casas/?tipo=venta">Venta</a></li>
-											<li><a href="/casas/?tipo=renta">Renta</a></li>
-											<li><a href="/casas">Mas propiedades</a></li>
-										</ul>
-									</li>
-									<li><a href="/servicios/consultoria-ambiental-sas/">Consultoría ambiental</a></li>
-									<li><a href="/#contacto">Contacto</a></li>
-								</ul>
-							</nav>
+							<?php include('./_nav.php'); ?>
 
 					</div>
 				</div>
@@ -81,7 +56,7 @@
 							  </div>
 							  <h3><?=$casa->title; ?></h3>
 							  <p class="location"><?=$casa->title1; ?></p>
-							  <p class="location"><?=$casa->select1->value; ?> - <?=$casa->select2->value; ?></p>
+							  <p class="location"><?=$casa->categories->title; ?> - <?=$casa->select2->value; ?></p>
 							  <p class="details">$<?=$casa->price; ?> mxn</p>
                 			  <p class="details">Area: <?=$casa->area; ?> m²</p>
 							</a>
