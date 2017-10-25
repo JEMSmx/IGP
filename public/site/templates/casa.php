@@ -1,4 +1,5 @@
 <?php include('./_head.php'); ?>
+<script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>
 	<body class="no-sidebar">
 		<div id="page-wrapper">
 			<!-- Header -->
@@ -25,7 +26,7 @@
 									
                   
                   <header class="style1">
-										<h2 style="margin-top: .75em;"><?=$page->select1->value;?> - <?=$page->select2->value;?>  <br> <?=$page->price;?>  mxn</h2>
+										<h2 style="margin-top: .75em;"><?=$casa->categories->title; ?> - <?=$page->select2->value;?>  <br> <?=$page->price;?>  mxn</h2>
 										<p>
                       <strong><?=$page->title2;?>  - <?=$page->title1;?> </strong>
                       <br>
@@ -47,7 +48,12 @@
 							</div>
 
 					</div>
+					<?php 
+$map = $modules->get('MarkupGoogleMap');
+echo $map->render($page, 'location');
+?>
 				</div>
+
 
 <!--  Footer  -->
 			<div id="footer-wrapper" class="wrapper">
