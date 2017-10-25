@@ -26,7 +26,7 @@
 									
                   
                   <header class="style1">
-										<h2 style="margin-top: .75em;"><?=$casa->categories->title; ?> - <?=$page->select2->value;?>  <br> <?=$page->price;?>  mxn</h2>
+										<h2 style="margin-top: .75em;"><?= $page->categories->title; ?> - <?=$page->select2->value;?>  <br> <?=$page->price;?>  mxn</h2>
 										<p>
                       <strong><?=$page->title2;?>  - <?=$page->title1;?> </strong>
                       <br>

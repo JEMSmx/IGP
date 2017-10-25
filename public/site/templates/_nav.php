@@ -7,6 +7,7 @@
 				<li itemprop="name"><a href="servicios/administracion-de-propiedades/" title="">Propiedades</a></li>
 				<li itemprop="name"><a href="servicios/comercializacion-y-promocion-de-patrimonios/">Patrimonios</a></li>
 				<li itemprop="name"><a href="servicios/planeacion-desarrollo-de-negocios-inmobiliarios/">Inmobiliarios</a></li>
+				<li itemprop="name"><a href="/servicios/consultoria-ambiental-sas/" title="Consultoría ambiental" itemprop="url">Consultoría ambiental</a></li>
 			</ul>
 		</li>
 		<li itemprop="name">
@@ -17,9 +18,6 @@
 				<li itemprop="name"><a href="/casas" title="Más propiedades" itemprop="url">Mas propiedades</a></li>
 			</ul>
 		</li>
-		<li itemprop="name"><a href="/servicios/consultoria-ambiental-sas/" title="Consultoría ambiental" itemprop="url">Consultoría ambiental</a></li>
 		<li itemprop="name"><a href="/#contacto" title="Contacto" itemprop="url">Contacto</a></li>
 	</ul>
 </nav>
-
-				
