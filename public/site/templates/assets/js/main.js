@@ -1,8 +1,3 @@
-/*
-	Escape Velocity by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
 (function($) {
 
@@ -94,3 +89,77 @@
 	});
 
 })(jQuery);
+function actualizar(tipo){
+		$.ajax({
+			url: '/data',
+			data: {tipo:tipo},
+			type: 'post',
+			cache: false,
+			async: true,
+			dataType: 'html',
+			beforeSend: function(jqXHR) {
+				jqXHR.overrideMimeType("text/html;charset=UTF-8");
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+                          //alert("Error\n"+ jqXHR.responseText);
+                          alert("Error");
+                      },
+                      success: function(data) {
+                      	console.log(data);
+                      	$('#highlights').html(data);
+                      	$('#venta').removeClass('link-strong');
+                      	$('#renta').removeClass('link-strong');
+                      	$("#"+tipo).addClass('link-strong');
+                      },complete: function() {
+
+                      }
+                  });
+	}
+
+	$('.scroll').click(function(e){
+        e.preventDefault(); //Don't automatically jump to the link
+        id = $(this).attr('href').replace('#', ''); //Extract the id of the element to jump to
+        $('html,body').animate({scrollTop: $("#"+id).offset().top-$(this).closest('ul').height()},'slow');
+    });
+
+
+$('#formContact').on('submit', function (e) { 
+	var expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if($("#contact-name").val().length < 3){
+    	$('#contact-name').focus();
+    	sweetAlert("Oops...", "Debe ingresar su nombre completo.", "error");
+    }else if($("#contact-email").val().length < 6){
+    	$('#contact-email').focus();
+    	sweetAlert("Oops...", "El correo que ingreso es incorrecto.", "error");
+    }else if(!expr.test($("#contact-email").val())){
+	    $('#contact-email').focus();
+	    sweetAlert("Oops...", "El correo que ingreso es incorrecto.", "error");
+    }else if($("#contact-message").val().length < 6){
+    	$('#contact-message').focus();
+    	sweetAlert("Oops...", "El mensaje que ingreso es muy corto, nos gustaria saber más.", "error");
+    }else{
+      $.ajax({
+          url: "/contact",
+          type: "post",
+          data: $(this).serialize(),
+          dataType: "json",
+        }).done(function(msg){
+          if(msg['result']){
+          	$('#formContact')[0].reset();
+            swal({
+              title: 'Enviado',
+              text: 'Nos pondremos en contacto, lo mas pronto posible.',
+              animation: 'slide-from-top',
+              type: 'success',
+              timer: 2200,
+              showConfirmButton: false
+              });
+          }else{
+           	sweetAlert("Oops...", "Ocurrio un problema en el servidor, vuelta a intentar", "error");
+          }
+        }).fail(function (jqXHR, textStatus) {
+           //error
+        });
+    }
+    e.preventDefault(); 
+  });

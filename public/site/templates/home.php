@@ -62,7 +62,7 @@
 									</div>
 								</div>
 								<ul class="actions actions-centered">
-									<li><a href="#contacto" class="button style1 big">Contáctanos</a></li>
+									<li><a  href="#contacto" class="button style1 big scroll">Contáctanos</a></li>
 								</ul>
 							</section>
 
@@ -70,12 +70,12 @@
 				</div>
 
 			<!-- Highlights -->
-				<div class="wrapper style3">
+				<div id="casas" class="wrapper style3">
 					<div class="title"><?= $page->title3; ?></div>
 					<header class="style1" style="padding-top: 0;">
             <h3>
               <?= $page->text4; ?><br>
-             <a onclick="actualizar('renta'); return false;" href="/casas/?tipo=renta" class="link-light" id="renta">Propiedades en Renta</a> - <a onclick="actualizar('venta'); return false;" href="/casas/?tipo=venta" class="link-light" id="venta">Propiedades en Venta</a> - <a href="" class="link-light">Propiedades AMPI</a></h3>
+             <a onclick="actualizar('renta'); return false;" href="/casas/?tipo=renta" class="link-light" id="renta">Propiedades en Renta</a> - <a onclick="actualizar('venta'); return false;" href="/casas/?tipo=venta" class="link-light" id="venta">Propiedades en Venta</a> - <a href="http://www.ampiguadalajara.com.mx/iframe/?llave=%20883200dc0951372716e4c2a3147f31bf" class="link-light">Propiedades AMPI</a></h3>
           </header>
 					<div id="highlights" class="container">
 						<div class="row 150% products-container">
@@ -88,16 +88,18 @@
               			} ?>
               			<!--  Casa  -->
 							<a href="<?=$casa->url;?>" class="products">
-							  <div class="img-container" style="background-image: url('<?php echo $img->url; ?>')" >
-							    <div class="hover">
-							      <p>Más Información</p>
-							    </div>
+							  <div style="border: 1px solid #0000002b;padding: 8px;">
+    							      <div class="img-container" style="background-image: url('<?php echo $img->url; ?>')" >
+    							    <div class="hover">
+    							      <p>Más Información</p>
+    							    </div>
+    							  </div>
+    							  <h3><?=$casa->title; ?></h3>
+    							  <p class="location"><?=$casa->title1; ?></p>
+    							  <p class="location"><?=$casa->categories->title; ?> - <?=$casa->select2->value; ?></p>
+    							  <p class="details">$<?=$casa->price; ?> mxn</p>
+                    			  <p class="details">Area: <?=$casa->area; ?> m²</p>
 							  </div>
-							  <h3><?=$casa->title; ?></h3>
-							  <p class="location"><?=$casa->title1; ?></p>
-							  <p class="location"><?=$casa->categories->title; ?> - <?=$casa->select2->value; ?></p>
-							  <p class="details">$<?=$casa->price; ?> mxn</p>
-                			  <p class="details">Area: <?=$casa->area; ?> m²</p>
 							</a>
              <?php } ?>
 							
@@ -108,141 +110,4 @@
 						</div>
 					</div>
 				</div>
-
-			<!-- Footer -->
-				<div id="footer-wrapper" class="wrapper">
-					<div id="contacto" class="title"><?= $page->title4; ?></div>
-					<div id="footer" class="container">
-						<header class="style1">
-							<h2><?= $page->titleContact; ?></h2>
-							<p>
-								<?= $page->subtitleContact; ?>
-							</p>
-						</header>
-						<hr />
-						<div class="row 150%">
-							<div class="6u 12u(mobile)">
-
-								<!-- Contact Form -->
-									<section>
-										<form method="post" action="#">
-											<div class="row 50%">
-												<div class="6u 12u(mobile)">
-													<input type="text" name="name" id="contact-name" placeholder="Nombre" />
-												</div>
-												<div class="6u 12u(mobile)">
-													<input type="text" name="email" id="contact-email" placeholder="Correo" />
-												</div>
-											</div>
-											<div class="row 50%">
-												<div class="12u">
-													<textarea name="message" id="contact-message" placeholder="Mensaje" rows="4"></textarea>
-												</div>
-											</div>
-											<div class="row">
-												<div class="12u">
-													<ul class="actions">
-														<li><input type="submit" class="style1" value="Enviar" /></li>
-														<li><input type="reset" class="style2" value="Borrar" /></li>
-													</ul>
-												</div>
-											</div>
-										</form>
-									</section>
-
-							</div>
-							<div class="6u 12u(mobile)">
-							<?php $contacto=$pages->find("template=contacto");  ?>
-								<!-- Contact -->
-									<section class="feature-list small">
-										<div class="row">
-											<div class="6u 12u(mobile)">
-												<section>
-													<h3 class="icon fa-home">Dirección</h3>
-													<p>
-														<?=$contacto[0]->text1;?>
-													</p>
-												</section>
-											</div>
-											<div class="6u 12u(mobile)">
-												<section>
-													<h3 class="icon fa-comment">Redes Sociales</h3>
-													<p>
-														<?=$contacto[0]->redes;?>
-													</p>
-												</section>
-											</div>
-										</div>
-										<div class="row">
-											<div class="6u 12u(mobile)">
-												<section>
-													<h3 class="icon fa-envelope">Email</h3>
-													<p>
-														<a href="#"><?=$contacto[0]->title1;?></a>
-													</p>
-												</section>
-											</div>
-											<div class="6u 12u(mobile)">
-												<section>
-													<h3 class="icon fa-phone">Teléfono</h3>
-													<p>
-														<a href="tel:333333333"><?=$contacto[0]->title2;?></a>
-													</p>
-												</section>
-											</div>
-										</div>
-									</section>
-
-							</div>
-						</div>
-						<hr />
-					</div>
-					<div id="copyright">
-						<ul>
-							<li>&copy; Copyright IGP Mobiliario 2017</li><li>Desarrollada: <a href="www.jems.com.mx">Jems </a></li>
-						</ul>
-					</div>
-				</div>
-
-		</div>
-
-		<!-- Scripts -->
-
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-			<script src="<?php echo $config->urls->templates ?>assets/js/jquery.dropotron.min.js"></script>
-			<script src="<?php echo $config->urls->templates ?>assets/js/skel.min.js"></script>
-			<script src="<?php echo $config->urls->templates ?>assets/js/skel-viewport.min.js"></script>
-			<script src="<?php echo $config->urls->templates ?>assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="<?php echo $config->urls->templates ?>assets/js/main.js"></script>
-			<script type="text/javascript">
-			function actualizar(tipo){
-				$.ajax({
-                        url: '/data',
-                        data: {tipo:tipo},
-                        type: 'post',
-                        cache: false,
-                        async: true,
-                        dataType: 'html',
-                        beforeSend: function(jqXHR) {
-                          jqXHR.overrideMimeType("text/html;charset=UTF-8");
-                        },
-                        error: function(jqXHR, textStatus, errorThrown) {
-                          //alert("Error\n"+ jqXHR.responseText);
-                          alert("Error");
-                        },
-                        success: function(data) {
-                        	console.log(data);
-                             $('#highlights').html(data);
-                             $('#venta').removeClass('link-strong');
-                             $('#renta').removeClass('link-strong');
-                             $("#"+tipo).addClass('link-strong');
-                        },complete: function() {
-				           
-				          }
-				       });
-			}
-				
-			</script>
-	</body>
-</html>
+<?php include('./_foot.php'); ?>
