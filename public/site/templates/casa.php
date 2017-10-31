@@ -64,11 +64,11 @@ echo $map->render($page, 'location');
 							</p>
 						</header>
 						<hr />
-			<div class="row 150%">
+		<div class="row 150%">
 			<div class="6u 12u(mobile)">
 				<!-- Contact Form -->
 				<section>
-					<form method="post" action="#">
+					<form id="formContact">
 						<div class="row 50%">
 							<div class="6u 12u(mobile)">
 								<input type="text" name="name" id="contact-name" placeholder="Nombre" />
@@ -142,12 +142,7 @@ echo $map->render($page, 'location');
 		<hr />
 	</div>
 	<div id="copyright">
-		<ul style="
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		max-width: 500px;
-		margin: 0 auto;">
+		<ul style="display: flex;justify-content: center;align-items: center;max-width: 500px;margin: 0 auto;">
 		<li>&copy; Copyright IGP Mobiliario <?=date('Y');?></li>
 		<li><img src="http://www.casasyterrenos.com/articuloscyt/wp-content/uploads/2017/02/ampi.png" style="height: 32px;"></li>
 		<li>Desarrollada: <a href="https://www.jems.com.mx">Jems </a></li>
@@ -156,11 +151,7 @@ echo $map->render($page, 'location');
 </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script src="<?php echo $config->urls->templates ?>assets/js/jquery.dropotron.min.js"></script>
-<script src="<?php echo $config->urls->templates ?>assets/js/skel.min.js"></script>
-<script src="<?php echo $config->urls->templates ?>assets/js/skel-viewport.min.js"></script>
-<script src="<?php echo $config->urls->templates ?>assets/js/util.js"></script>
+<script src="<?php echo AIOM::JS(array('assets/js/jquery.dropotron.min.js', 'assets/js/skel.min.js', 'assets/js/skel-viewport.min.js', 'assets/js/util.js', 'assets/js/sweetalert.min.js', 'assets/js/main.js')); ?>"></script>
 <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="<?php echo $config->urls->templates ?>assets/js/main.js"></script>
 </body>
 </html>
