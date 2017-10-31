@@ -150,6 +150,51 @@ echo $map->render($page, 'location');
 </div>
 </div>
 </div>
+<script>
+        jQuery(document).ready(function($) {
+          $(".owl-carousel").each(function(index, el) {
+            var containerHeight = $(el).height();
+            $(el).find("img").each(function(index, img) {
+              var w = $(img).prop('naturalWidth');
+              var h = $(img).prop('naturalHeight');
+              $(img).css({
+                'width': Math.round(containerHeight * w / h) + 'px',
+                'height': containerHeight + 'px'
+              });
+            }),
+            $(el).owlCarousel({
+              autoWidth: true,
+              margin:17,
+              loop:true,
+                nav:false,
+                center: true,
+                autoplay: true,
+                video:true,
+                autoplayTimeout:2999,
+                smartSpeed: 1000,
+                autoplayHoverPause:false,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:1,
+                        dots: false
+                    },
+                    1000:{
+                        items:1,
+                        dots: false
+                    }
+                }
+            });
+          });
+        });
+      </script>
+			<script>
+        $(document).ready(function(){
+          $(".owl-carousel").owlCarousel();
+        });
+      </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="<?php echo AIOM::JS(array('assets/js/jquery.dropotron.min.js', 'assets/js/skel.min.js', 'assets/js/skel-viewport.min.js', 'assets/js/util.js', 'assets/js/sweetalert.min.js', 'assets/js/main.js')); ?>"></script>
 <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
