@@ -9,19 +9,20 @@
 		} ?>
 		<!--  Casa  -->
 		<a href="<?=$casa->url;?>" class="products">
-			<div class="img-container" style="background-image: url('<?php echo $img->url; ?>')" >
-				<div class="hover">
-					<p>Más Información</p>
+			<div style="border: 1px solid #0000002b;padding: 8px;">
+				<div class="img-container" style="background-image: url('<?php echo $img->url; ?>')" >
+					<div class="hover">
+						<p>Más Información</p>
+					</div>
 				</div>
+				<h3><?=$casa->title; ?></h3>
+				<p class="location"><?=$casa->title1; ?></p>
+				<p class="location"><?=$casa->categories->title; ?> - <?=$casa->select2->value; ?></p>
+				<p class="details">$<?=$casa->price; ?> mxn</p>
+				<p class="details">Area: <?=$casa->area; ?> m²</p>
 			</div>
-			<h3><?=$casa->title; ?></h3>
-			<p class="location"><?=$casa->title1; ?></p>
-			<p class="location"><?=$casa->categories->title; ?> - <?=$casa->select2->value; ?></p>
-			<p class="details">$<?=$casa->price; ?> mxn</p>
-			<p class="details">Area: <?=$casa->area; ?> m²</p>
 		</a>
 		<?php } ?>
-
 		<ul class="actions actions-centered" style="width: 100%;">
 			<li><a href="/casas" class="button style1 big">Ver Mas</a></li>
 		</ul>

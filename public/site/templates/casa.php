@@ -53,10 +53,8 @@ $map = $modules->get('MarkupGoogleMap');
 echo $map->render($page, 'location');
 ?>
 				</div>
-
-
 <!--  Footer  -->
-			<div id="footer-wrapper" class="wrapper">
+		<div id="footer-wrapper" class="wrapper">
 					<div class="title">Agendar Cita</div>
 					<div id="footer" class="container">
 						<header class="style1">
@@ -66,148 +64,103 @@ echo $map->render($page, 'location');
 							</p>
 						</header>
 						<hr />
-						<div class="row 150%">
+			<div class="row 150%">
+			<div class="6u 12u(mobile)">
+				<!-- Contact Form -->
+				<section>
+					<form method="post" action="#">
+						<div class="row 50%">
 							<div class="6u 12u(mobile)">
-
-								<!-- Contact Form -->
-									<section>
-										<form method="post" action="#">
-											<div class="row 50%">
-												<div class="6u 12u(mobile)">
-													<input type="text" name="name" id="contact-name" placeholder="Nombre" />
-												</div>
-												<div class="6u 12u(mobile)">
-													<input type="text" name="email" id="contact-email" placeholder="Correo" />
-												</div>
-											</div>
-											<div class="row 50%">
-												<div class="12u">
-													<textarea name="message" id="contact-message" placeholder="Mensaje" rows="4"></textarea>
-												</div>
-											</div>
-											<div class="row">
-												<div class="12u">
-													<ul class="actions">
-														<li><input type="submit" class="style1" value="Enviar" /></li>
-														<li><input type="reset" class="style2" value="Borrar" /></li>
-													</ul>
-												</div>
-											</div>
-										</form>
-									</section>
-
+								<input type="text" name="name" id="contact-name" placeholder="Nombre" />
 							</div>
 							<div class="6u 12u(mobile)">
-							<?php $contacto=$pages->find("template=contacto");  ?>
-								<!-- Contact -->
-									<section class="feature-list small">
-										<div class="row">
-											<div class="6u 12u(mobile)">
-												<section>
-													<h3 class="icon fa-home">Dirección</h3>
-													<p>
-														<?=$contacto[0]->text1;?>
-													</p>
-												</section>
-											</div>
-											<div class="6u 12u(mobile)">
-												<section>
-													<h3 class="icon fa-comment">Redes Sociales</h3>
-													<p>
-														<?=$contacto[0]->redes;?>
-													</p>
-												</section>
-											</div>
-										</div>
-										<div class="row">
-											<div class="6u 12u(mobile)">
-												<section>
-													<h3 class="icon fa-envelope">Email</h3>
-													<p>
-														<a href="#"><?=$contacto[0]->title1;?></a>
-													</p>
-												</section>
-											</div>
-											<div class="6u 12u(mobile)">
-												<section>
-													<h3 class="icon fa-phone">Teléfono</h3>
-													<p>
-														<a href="tel:333333333"><?=$contacto[0]->title2;?></a>
-													</p>
-												</section>
-											</div>
-										</div>
-									</section>
-
+								<input type="text" name="email" id="contact-email" placeholder="Correo" />
 							</div>
 						</div>
-						<hr />
-					</div>
-					<div id="copyright">
-						<ul>
-							<li>&copy; Copyright IGP Mobiliario 2017</li><li>Desarrollada: <a href="www.jems.com.mx">Jems </a></li>
-						</ul>
-					</div>
-				</div>
+						<div class="row 50%">
+							<div class="12u">
+								<textarea name="message" id="contact-message" placeholder="Mensaje" rows="4"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<ul class="actions">
+									<li><input type="submit" class="style1" value="Enviar" /></li>
+									<li><input type="reset" class="style2" value="Borrar" /></li>
+								</ul>
+							</div>
+						</div>
+					</form>
+				</section>
 
+			</div>
+			<div class="6u 12u(mobile)">
+				<?php $contacto=$pages->find("template=contacto");  ?>
+				<!-- Contact -->
+				<section class="feature-list small">
+					<div class="row">
+						<div class="6u 12u(mobile)">
+							<section>
+								<h3 class="icon fa-home">Dirección</h3>
+								<p>
+									<?=$contacto[0]->text1;?>
+								</p>
+							</section>
+						</div>
+						<div class="6u 12u(mobile)">
+							<section>
+								<h3 class="icon fa-comment">Redes Sociales</h3>
+								<p>
+									<?=$contacto[0]->redes;?>
+								</p>
+							</section>
+						</div>
+					</div>
+					<div class="row">
+						<div class="6u 12u(mobile)">
+							<section>
+								<h3 class="icon fa-envelope">Email</h3>
+								<p>
+									<a href="mailto:<?=$contacto[0]->title1;?>"><?=$contacto[0]->title1;?></a>
+								</p>
+							</section>
+						</div>
+						<div class="6u 12u(mobile)">
+							<section>
+								<h3 class="icon fa-phone">Teléfono</h3>
+								<p>
+									<?php $tele = intval(preg_replace('/[^0-9]+/', '', $contacto[0]->title2), 10);  ?>
+									<a href="tel:<?=$tele?>"><?=$contacto[0]->title2;?></a>
+								</p>
+							</section>
+						</div>
+					</div>
+				</section>
+
+			</div>
 		</div>
-
-		<!-- Scripts -->
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-		    <script src="<?php echo $config->urls->templates ?>assets/js/owl.carousel.min.js"></script>
-			<script src="<?php echo $config->urls->templates ?>assets/js/main.js"></script>
-			<script src="<?php echo $config->urls->templates ?>assets/js/jquery.dropotron.min.js"></script>
-			<script src="<?php echo $config->urls->templates ?>assets/js/skel.min.js"></script>
-			<script src="<?php echo $config->urls->templates ?>assets/js/skel-viewport.min.js"></script>
-			<script src="<?php echo $config->urls->templates ?>assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			
-			<script>
-        jQuery(document).ready(function($) {
-          $(".owl-carousel").each(function(index, el) {
-            var containerHeight = $(el).height();
-            $(el).find("img").each(function(index, img) {
-              var w = $(img).prop('naturalWidth');
-              var h = $(img).prop('naturalHeight');
-              $(img).css({
-                'width': Math.round(containerHeight * w / h) + 'px',
-                'height': containerHeight + 'px'
-              });
-            }),
-            $(el).owlCarousel({
-              autoWidth: true,
-              margin:17,
-              loop:true,
-                nav:false,
-                center: true,
-                autoplay: true,
-                video:true,
-                autoplayTimeout:2999,
-                smartSpeed: 1000,
-                autoplayHoverPause:false,
-                responsive:{
-                    0:{
-                        items:1
-                    },
-                    600:{
-                        items:1,
-                        dots: false
-                    },
-                    1000:{
-                        items:1,
-                        dots: false
-                    }
-                }
-            });
-          });
-        });
-      </script>
-			<script>
-        $(document).ready(function(){
-          $(".owl-carousel").owlCarousel();
-        });
-      </script>
-			
-
-	</body>
+		<hr />
+	</div>
+	<div id="copyright">
+		<ul style="
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		max-width: 500px;
+		margin: 0 auto;">
+		<li>&copy; Copyright IGP Mobiliario <?=date('Y');?></li>
+		<li><img src="http://www.casasyterrenos.com/articuloscyt/wp-content/uploads/2017/02/ampi.png" style="height: 32px;"></li>
+		<li>Desarrollada: <a href="https://www.jems.com.mx">Jems </a></li>
+	</ul>
+</div>
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="<?php echo $config->urls->templates ?>assets/js/jquery.dropotron.min.js"></script>
+<script src="<?php echo $config->urls->templates ?>assets/js/skel.min.js"></script>
+<script src="<?php echo $config->urls->templates ?>assets/js/skel-viewport.min.js"></script>
+<script src="<?php echo $config->urls->templates ?>assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="<?php echo $config->urls->templates ?>assets/js/main.js"></script>
+</body>
 </html>
