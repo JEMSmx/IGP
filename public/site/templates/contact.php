@@ -24,6 +24,4 @@ if($input->post->name && $input->post->email && $input->post->message) {
 	$result=array('result' => false);
 }
 
-
-      echo json_encode($result);
-            
+      echo json_encode($result);            
