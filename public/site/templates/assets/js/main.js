@@ -89,6 +89,48 @@
 	});
 
 })(jQuery);
+
+jQuery(document).ready(function($) {
+          $(".owl-carousel").each(function(index, el) {
+            var containerHeight = $(el).height();
+            $(el).find("img").each(function(index, img) {
+              var w = $(img).prop('naturalWidth');
+              var h = $(img).prop('naturalHeight');
+              $(img).css({
+                'width': Math.round(containerHeight * w / h) + 'px',
+                'height': containerHeight + 'px'
+              });
+            }),
+            $(el).owlCarousel({
+              autoWidth: true,
+              margin:17,
+              loop:true,
+                nav:false,
+                center: true,
+                autoplay: true,
+                video:true,
+                autoplayTimeout:2999,
+                smartSpeed: 1000,
+                autoplayHoverPause:false,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:1,
+                        dots: false
+                    },
+                    1000:{
+                        items:1,
+                        dots: false
+                    }
+                }
+            });
+          });
+        });
+        $(document).ready(function(){
+          $(".owl-carousel").owlCarousel();
+        });
 function actualizar(tipo){
 		$.ajax({
 			url: '/data',

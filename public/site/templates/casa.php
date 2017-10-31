@@ -1,5 +1,5 @@
 <?php include('./_head.php'); ?>
-<script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>
+<script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDHS52mcj8kvCINIGfu18vtGOxIfNA5UzA'></script>
 	<body class="no-sidebar">
 		<div id="page-wrapper">
 			<!-- Header -->
