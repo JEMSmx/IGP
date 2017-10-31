@@ -4,7 +4,7 @@ if($input->post->name && $input->post->email && $input->post->message) {
 		  $email_user=$sanitizer->email($input->post->email);
 		  $message_user=$input->post->message;
 
-		$pag=$page->get("1030");
+		$pag=$pages->get("1030");
         $mail = wireMail();
         $mail->to($pag->title1);
         $mail->from('no-reply@igpinmobiliaria.com', 'IGP | Inmobiliaria Y Gestión Patrimonial');
