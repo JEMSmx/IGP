@@ -3,10 +3,11 @@
 		<li class="current" itemprop="name"><a href="/" title="Inicio" itemprop="url">Inicio</a></li>
 		<li itemprop="name"><a <?= ($page->path != "/") ?  'href="/#servicios"':'class="scroll" href="#servicios"';?>  itemprop="url"  title="Servicios">Servicios</a>
 			<ul>
-				<li itemprop="name"><a href="servicios/administracion-de-propiedades/" title="">Propiedades</a></li>
-				<li itemprop="name"><a href="servicios/comercializacion-y-promocion-de-patrimonios/">Patrimonios</a></li>
-				<li itemprop="name"><a href="servicios/planeacion-desarrollo-de-negocios-inmobiliarios/">Inmobiliarios</a></li>
-				<li itemprop="name"><a href="/servicios/consultoria-ambiental-sas/" title="Consultoría ambiental" itemprop="url">Consultoría ambiental</a></li>
+				<?php $services = $pages->get("/servicios"); 
+					$children = $services->children;
+					foreach($children as $child) { ?>
+					<li itemprop="name"><a href="<?= $child->url; ?>" title="<?= $child->title; ?>"><?= $child->title2; ?></a></li>
+				<?php } ?>
 			</ul>
 		</li>
 		<li itemprop="name">
@@ -20,3 +21,4 @@
 		<li itemprop="name"><a class="scroll" href="#contacto" title="Contacto" itemprop="url">Contacto</a></li>
 	</ul>
 </nav>
+
