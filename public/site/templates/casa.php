@@ -151,7 +151,7 @@ echo $map->render($page, 'location');
 </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script src="<?php echo AIOM::JS(array('assets/js/jquery.dropotron.min.js', 'assets/js/skel.min.js', 'assets/js/skel-viewport.min.js', 'assets/js/util.js', 'assets/js/sweetalert.min.js', 'assets/owl-carousel.min.js', 'assets/js/main.js')); ?>"></script>
+<script src="<?php echo AIOM::JS(array('assets/js/jquery.dropotron.min.js', 'assets/js/skel.min.js', 'assets/js/skel-viewport.min.js', 'assets/js/util.js', 'assets/js/sweetalert.min.js', 'assets/owl.carousel.min.js', 'assets/js/main.js')); ?>"></script>
 <script>
         jQuery(document).ready(function($) {
           $(".owl-carousel").each(function(index, el) {
