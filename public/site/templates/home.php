@@ -75,7 +75,7 @@
 					<header class="style1" style="padding-top: 0;">
             <h3>
               <?= $page->text4; ?><br>
-             <a onclick="actualizar('renta'); return false;" href="/casas/?tipo=renta" class="link-light" id="renta">Propiedades en Renta</a> - <a onclick="actualizar('venta'); return false;" href="/casas/?tipo=venta" class="link-light" id="venta">Propiedades en Venta</a> - <a href="http://www.ampiguadalajara.com.mx/iframe/?llave=%20883200dc0951372716e4c2a3147f31bf" class="link-light">Propiedades AMPI</a></h3>
+             <a onclick="actualizar('renta'); return false;" href="/casas/?tipo=renta" class="link-light" id="renta">Propiedades en Renta</a> - <a onclick="actualizar('venta'); return false;" href="/casas/?tipo=venta" class="link-light" id="venta">Propiedades en Venta</a> - <a href="http://www.ampiguadalajara.com.mx/iframe/?llave= 883200dc0951372716e4c2a3147f31bf" class="link-light">Propiedades AMPI</a></h3>
           </header>
 					<div id="highlights" class="container">
 						<div class="row 150% products-container">
